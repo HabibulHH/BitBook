@@ -14,6 +14,12 @@ namespace BitBookProject.Controllers
             return View();
         }
 
+        public ActionResult Me()
+        {
+            return View();
+        }
+
+
         
     }
 }

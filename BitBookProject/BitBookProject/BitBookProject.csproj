@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -122,13 +123,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Design Content\assets\css\animate.min.css" />
+    <Content Include="Design Content\assets\css\Custom.css" />
     <Content Include="Design Content\assets\css\errors.css" />
-    <Content Include="Design Content\assets\css\file_manager.css" />
+    <Content Include="Design Content\assets\css\friends.css" />
     <Content Include="Design Content\assets\css\grid_posts.css" />
-    <Content Include="Design Content\assets\css\list_posts.css" />
+    <Content Include="Design Content\assets\css\list_users.css" />
+    <Content Include="Design Content\assets\css\people_directory.css" />
+    <Content Include="Design Content\assets\css\photos.css" />
     <Content Include="Design Content\assets\css\recover_password.css" />
     <Content Include="Design Content\assets\css\timeline.css" />
-    <Content Include="Design Content\assets\img\template\ie8_opacity_dark_60.html" />
     <Content Include="Design Content\assets\js\custom.js" />
     <Content Include="Design Content\assets\js\grid_posts.js" />
     <Content Include="Design Content\assets\js\jquery.1.11.1.min.js" />
@@ -139,9 +142,7 @@
     <Content Include="Design Content\font-awesome-4.4.0\css\font-awesome.min.css" />
     <Content Include="Design Content\font-awesome-4.4.0\fonts\fontawesome-webfont93e3.html" />
     <Content Include="Design Content\font-awesome-4.4.0\fonts\fontawesome-webfont93e3.svg" />
-    <Content Include="Design Content\img\Bg\bg.jpg" />
     <Content Include="Design Content\img\Cover\mandown.jpg" />
-    <Content Include="Design Content\img\favicon.html" />
     <Content Include="Design Content\img\favicon.png" />
     <Content Include="Design Content\img\Friends\child-1.jpg" />
     <Content Include="Design Content\img\Friends\guy-2.jpg" />
@@ -161,7 +162,10 @@
     <Content Include="Design Content\img\Friends\woman-7.jpg" />
     <Content Include="Design Content\img\Friends\woman-8.jpg" />
     <Content Include="Design Content\img\Friends\woman-9.jpg" />
-    <Content Include="Design Content\img\icon-edit.png" />
+    <Content Include="Design Content\img\Likes\likes-1.png" />
+    <Content Include="Design Content\img\Likes\likes-2.png" />
+    <Content Include="Design Content\img\Likes\likes-5.png" />
+    <Content Include="Design Content\img\Likes\likes-6.png" />
     <Content Include="Design Content\img\Photos\1.jpg" />
     <Content Include="Design Content\img\Photos\2.jpg" />
     <Content Include="Design Content\img\Photos\3.jpg" />
@@ -171,6 +175,11 @@
     <Content Include="Design Content\img\Photos\7.jpg" />
     <Content Include="Design Content\img\Photos\8.jpg" />
     <Content Include="Design Content\img\Photos\9.jpg" />
+    <Content Include="Design Content\img\plus.png" />
+    <Content Include="Design Content\img\Post\game.jpg" />
+    <Content Include="Design Content\img\Post\manok.png" />
+    <Content Include="Design Content\img\Post\place1-full.jpg" />
+    <Content Include="Design Content\img\Post\young-couple-in-love.jpg" />
     <Content Include="Design Content\img\prism.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -215,6 +224,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\ProfilesLayout.cshtml" />
     <Content Include="Views\Profiles\Profiles.cshtml" />
+    <Content Include="Views\Profiles\Me.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
