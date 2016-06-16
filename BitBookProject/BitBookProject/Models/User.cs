@@ -22,5 +22,13 @@ namespace BitBookProject.Models
 
         public DateTime DOB { get; set; }
         public int Gender { get; set; }
+
+        public User(string Email, string UserName, string Password):this()
+        {
+            this.Email = Email;
+            this.UserName = UserName;
+            this.Password = Password;
+        }
+        public User() { }
     }
 }
