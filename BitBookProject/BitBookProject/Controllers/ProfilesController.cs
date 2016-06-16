@@ -14,7 +14,7 @@ namespace BitBookProject.Controllers
             return View();
         }
 
-        public ActionResult Me()
+        public ActionResult Registration ()
         {
             return View();
         }
