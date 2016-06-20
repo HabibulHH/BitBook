@@ -229,8 +229,8 @@
     <Content Include="Views\Shared\ProfilesLayout.cshtml" />
     <Content Include="Views\Profiles\Profiles.cshtml" />
     <Content Include="Views\Profiles\Registration.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Account\LoggedIn.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

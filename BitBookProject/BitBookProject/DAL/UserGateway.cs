@@ -53,7 +53,7 @@ namespace BitBookProject.DAL
         {
             
             SqlConnection conection=new SqlConnection(Conntection);
-            string quary="Select Count(*) From UserTable Where Email='"+user.Email+"'";
+            string quary="Select Count(*) From UserTable Where UserName='"+user.UserName+"'" ;
             SqlCommand command=new SqlCommand(quary,conection);
             conection.Open();
             int Temp = Convert.ToInt32(command.ExecuteScalar().ToString());

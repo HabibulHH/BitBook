@@ -12,7 +12,7 @@ namespace BitBookProject.Controllers
     {
         UserManager userManager = new UserManager();
         // GET: Account
-        public ActionResult LogIn()
+        public ActionResult Login()
         {
             return View();
         }
@@ -23,26 +23,21 @@ namespace BitBookProject.Controllers
         {
             if (userManager.Login(user))
             {
-                Session["Email"] = user.Email;
                 Session["UserName"] = user.UserName;
                 ViewBag.SuccessMessage = "LogIn Successfully";
-                
+                return RedirectToAction("LoggedIn", "Account");
             }
             else
             {
                 ViewBag.ErrorMessage = " Email or Password is not Vaild";
             }
-            //return RedirectToAction("LoggedIn", "Account");
-            return RedirectToAction("Profiles", "Profiles");
+
+            return View();
         }
 
         public ActionResult LoggedIn()
         {
-            if (Session["Email"] != null)
-            {
-                return View();
-            }
-            else if (Session["UserName"]!=null)
+           if (Session["UserName"]!=null)
             {
                 return RedirectToAction("Profiles", "Profiles");
             }
