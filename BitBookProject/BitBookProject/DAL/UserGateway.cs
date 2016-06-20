@@ -48,5 +48,33 @@ namespace BitBookProject.DAL
 
 
         }
+
+        public bool LoginUser(User user)
+        {
+            
+            SqlConnection conection=new SqlConnection(Conntection);
+            string quary="Select Count(*) From UserTable Where UserName='"+user.UserName+"'" ;
+            SqlCommand command=new SqlCommand(quary,conection);
+            conection.Open();
+            int Temp = Convert.ToInt32(command.ExecuteScalar().ToString());
+            conection.Close();
+            if (Temp==1)
+            {
+                conection.Open();
+                string checkPasswordQuary = "Select Password From UserTable Where Password='" + user.Password + "'";
+                SqlCommand commandOne=new SqlCommand(checkPasswordQuary,conection);
+                string password = commandOne.ExecuteScalar().ToString();
+                if (password == user.Password)
+                {
+                    return true;
+                }
+                return false;
+
+            }
+            return false;
+
+        }
+
+        
     }
 }

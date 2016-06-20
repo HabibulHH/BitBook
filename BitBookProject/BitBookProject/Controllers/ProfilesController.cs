@@ -11,15 +11,16 @@ namespace BitBookProject.Controllers
     public class ProfilesController : Controller
     {
         // GET: Profiles
-        UserManager userManager=new UserManager();
+        UserManager userManager = new UserManager();
+
         public ActionResult Profiles()
         {
             return View();
         }
 
-        public ActionResult Registration ()
+        public ActionResult Registration()
         {
-            
+
             return View();
         }
 
@@ -31,6 +32,8 @@ namespace BitBookProject.Controllers
             return View();
         }
 
-        
+      
+
+
     }
 }

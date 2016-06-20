@@ -28,5 +28,16 @@ namespace BitBookProject.BLL
 
 
         }
+
+        public bool Login(User user)
+        {
+            bool isLogin=false;
+            if (userGateway.LoginUser(user))
+            {
+                return isLogin = true;
+            }
+            return isLogin;
+
+        }
     }
 }
