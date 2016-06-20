@@ -24,3 +24,29 @@ c:\users\rakib hossain\documents\visual studio 2013\Projects\BitBookProject\BitB
 c:\users\rakib hossain\documents\visual studio 2013\Projects\BitBookProject\BitBookProject\obj\Debug\BitBookProject.csprojResolveAssemblyReference.cache
 c:\users\rakib hossain\documents\visual studio 2013\Projects\BitBookProject\BitBookProject\obj\Debug\BitBookProject.dll
 c:\users\rakib hossain\documents\visual studio 2013\Projects\BitBookProject\BitBookProject\obj\Debug\BitBookProject.pdb
+H:\BitBook\BitBookProject\BitBookProject\bin\BitBookProject.dll.config
+H:\BitBook\BitBookProject\BitBookProject\bin\BitBookProject.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\BitBookProject.pdb
+H:\BitBook\BitBookProject\BitBookProject\bin\Antlr3.Runtime.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\Microsoft.Web.Infrastructure.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\Newtonsoft.Json.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Helpers.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Mvc.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Optimization.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Razor.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.Deployment.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.Razor.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\WebGrease.dll
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Helpers.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Mvc.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Optimization.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.Razor.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.Deployment.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.Razor.xml
+H:\BitBook\BitBookProject\BitBookProject\bin\Antlr3.Runtime.pdb
+H:\BitBook\BitBookProject\BitBookProject\bin\Newtonsoft.Json.xml
+H:\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.csprojResolveAssemblyReference.cache
+H:\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.dll
+H:\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.pdb
