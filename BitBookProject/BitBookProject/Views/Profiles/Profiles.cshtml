@@ -1,7 +1,11 @@
-﻿@{
+﻿@using BitBookProject.Models
+@model BitBookProject.Models.User
+@{
+   
     //ViewBag.Title = "Profiles";
     Layout = "~/Views/Shared/ProfilesLayout.cshtml";
 }
+
 
 
 <div class="container bootstrap snippet">
@@ -13,7 +17,7 @@
         </div>
         <div class="fb-name">
             <h2>
-                <a href="#">Deyson Bejarano</a>
+                <a href="#">@Model.Name</a>
             </h2>
         </div>
     </div>
@@ -21,7 +25,7 @@
         <div class="profile-thumb">
             <img src="~/Design Content/img/Friends/woman-1.jpg" alt="">
         </div>
-        <a href="#" class="fb-user-mail">dbjarano@bootdey.com</a>
+        <a href="#" class="fb-user-mail">@Model.Email</a>
     </div>
 </div>
 
@@ -51,6 +55,7 @@
             <ul class="friends">
                 <li>
                     <a href="#">
+
                         <img src="~/Design Content/img/Friends/woman-4.jpg" title="Jhoanath matew" class="img-responsive tip">
                     </a>
                 </li>
