@@ -8,15 +8,6 @@ $(document).ready(function() {
       $('.chat-sidebar').toggleClass('focus');
   });
 
-  /*============= photos ==================*/
-  $(".show-photo").click(function(){
-    var img  = $(this).closest(".image-container").find(".image img:first").attr("src");
-    var title = $(this).closest(".image-container").find(".info h5:first").html();
-    $("#show-modal .modal-body").html("<img src='"+img+"' class='img-responsive'>");
-    $("#show-modal .modal-title").html(title);
-    $("#show-modal").modal("show");
-  });
-
   /*============= About page ==============*/
   $(".about-tab-menu .list-group-item").click(function(e) {
       e.preventDefault();
@@ -26,19 +17,18 @@ $(document).ready(function() {
       $("div.about-tab>div.about-tab-content").removeClass("active");
       $("div.about-tab>div.about-tab-content").eq(index).addClass("active");
   });
-  
+
+  /*==============  photos ===============*/
+  $(".show-image").click(function(){
+    var img = $(this).closest(".item-img-wrap").find("img:first").attr("src");
+    $("#showPhoto .modal-body").html("<img src='"+img+"' class='img-responsive'>");
+    $("#showPhoto").modal("show");
+  })
+
   /*==============  show panel ===============*/
   $(".btn-frm").click(function(){
     $(".frm").toggleClass("hidden");
     $(".frm").toggleClass("animated");
-    $(".frm").toggleClass("flipInX");
-    $(".users-row").addClass('fadeInDown');
+    $(".frm").toggleClass("fadeInRight");
   });
-
-  /*==============  Messages ===============*/
-  if ($('#ms-menu-trigger')[0]) {
-    $('body').on('click', '#ms-menu-trigger', function() {
-        $('.ms-menu').toggleClass('toggled'); 
-    });
-  }
 })

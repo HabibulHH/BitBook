@@ -1,377 +1,466 @@
-﻿@{
-    ViewBag.Title = "Profile";
+﻿@using BitBookProject.Models
+@model BitBookProject.Models.User
+@{
+   
+    ViewBag.Title = "Profiles";
     Layout = "~/Views/Shared/ProfilesLayout.cshtml";
 }
-<div class="container" style="margin-top:66px;">
-    <div class="row">
-        <div class="col-md-10">
-            <div class="panel">
-                <div class="cover-photo">
-                    <div class="fb-timeline-img">
-                        <img src="~/Design Content/img/Cover/mandown.jpg" alt="">
-                    </div>
-                    <div class="fb-name">
-                        <h2><a href="#">Jonathan Burke Jr.</a></h2>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="profile-thumb">
-                        <img src="~/Design Content/img/Friends/guy-9.jpg" alt="">
-                    </div>
-                    @*<a href="#" class="fb-user-mail">@jsBurke</a>*@
-                </div>
-            </div>
+
+
+
+<div class="container bootstrap snippet">
+<div class="row">
+<div class="panel">
+    <div class="cover-photo">
+        <div class="fb-timeline-img">
+           
+            <img src="@Url.Content(Model.CoverPicture)" style="width:900px; height: 350px" alt=" ">
+        </div>
+        <div class="fb-name">
+            <h2>
+                <a href="#">@Model.Name</a>
+            </h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-10 animated fadeInUp">
-            <div class="row">
-                <!-- left -->
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="panel profile-info">
-                                <form>
-                                    <textarea class="form-control input-lg p-text-area" rows="2" placeholder="Whats in your mind today?"></textarea>
-                                </form>
-                                <div class="panel-footer">
-                                    <button type="button" class="btn btn-warning pull-right">Post</button>
-                                    <ul class="nav nav-pills">
-                                        <li><a href="#"><i class="fa fa-map-marker"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-camera"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-film"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-microphone"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- post -->
-                        <div class="col-md-12">
-                            <div class="box box-widget">
-                                <div class="box-header with-border">
-                                    <div class="user-block">
-                                        <img class="img-circle" src="~/Design Content/img/Friends/guy-9.jpg" alt="User Image">
-                                        <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                                        <span class="description">Shared publicly - 7:30 PM Today</span>
-                                    </div>
-                                    <div class="box-tools">
-                                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Mark as read">
-                                            <i class="fa fa-circle-o"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body">
-                                    <p>
-                                        Far far away, behind the word mountains, far from the
+    <div class="panel-body">
+        <div class="profile-thumb">
+            
+            <img src="@Url.Content(Model.ProfilePicture)" alt="" />
+          
+            @Html.HiddenFor(model => model.UserId)
+        </div>
+        <a href="#" class="fb-user-mail">@Model.Email</a>
+    </div>
+</div>
 
-                                        countries Vokalia and Consonantia, there live the blind
 
-                                        texts. Separated they live in Bookmarksgrove right at
-                                    </p>
-
-                                    <p>
-                                        the coast of the Semantics, a large language ocean.
-
-                                        A small river named Duden flows by their place and supplies
-
-                                        it with the necessary regelialia. It is a paradisematic
-
-                                        country, in which roasted parts of sentences fly into
-
-                                        your mouth.
-                                    </p>
-
-                                    <div class="attachment-block clearfix">
-                                        <img class="attachment-img" src="~/Design Content/img/Photos/3.jpg" alt="Attachment Image">
-                                        <div class="attachment-pushed">
-                                            <h4 class="attachment-heading"><a href="#">Lorem ipsum text generator</a></h4>
-                                            <div class="attachment-text">
-                                                Description about the attachment can be placed here.
-
-                                                Lorem Ipsum is simply dummy text of the printing and typesetting industry... <a href="#">more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
-                                    <span class="pull-right text-muted">45 likes - 2 comments</span>
-                                </div>
-                                <div class="box-footer box-comments">
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-2.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Maria Gonzales
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            It is a long established fact that a reader will be distracted
-
-                                            by the readable content of a page when looking at its layout.
-
-                                        </div>
-                                    </div>
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-3.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Nora Havisham
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            The point of using Lorem Ipsum is that it has a more-or-less
-
-                                            normal distribution of letters, as opposed to using
-
-                                            'Content here, content here', making it look like readable English.
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-footer">
-                                    <form action="#" method="post">
-                                        <img class="img-responsive img-circle img-sm" src="~/Design Content/img/Friends/woman-4.jpg" alt="Alt Text">
-                                        <div class="img-push">
-                                            <input type="text" class="form-control input-sm" placeholder="Press enter to post comment">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div><!-- end post-->
-                        <!-- post -->
-                        <div class="col-md-12">
-                            <div class="box box-widget">
-                                <div class="box-header with-border">
-                                    <div class="user-block">
-                                        <img class="img-circle" src="~/Design Content/img/Friends/guy-9.jpg" alt="User Image">
-                                        <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                                        <span class="description">Shared publicly - 7:30 PM Today</span>
-                                    </div>
-                                    <div class="box-tools">
-                                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Mark as read">
-                                            <i class="fa fa-circle-o"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <div class="box-body">
-                                    <p>
-                                        Far far away, behind the word mountains, far from the
-
-                                        countries Vokalia and Consonantia, there live the blind
-
-                                        texts. Separated they live in Bookmarksgrove right at
-                                    </p>
-
-                                    <p>
-                                        the coast of the Semantics, a large language ocean.
-
-                                        A small river named Duden flows by their place and supplies
-
-                                        it with the necessary regelialia. It is a paradisematic
-
-                                        country, in which roasted parts of sentences fly into
-
-                                        your mouth.
-                                    </p>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
-                                    <span class="pull-right text-muted">45 likes - 2 comments</span>
-                                </div>
-                                <div class="box-footer box-comments">
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-2.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Maria Gonzales
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            It is a long established fact that a reader will be distracted
-
-                                            by the readable content of a page when looking at its layout.
-
-                                        </div>
-                                    </div>
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-3.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Nora Havisham
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            The point of using Lorem Ipsum is that it has a more-or-less
-
-                                            normal distribution of letters, as opposed to using
-
-                                            'Content here, content here', making it look like readable English.
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-footer">
-                                    <form action="#" method="post">
-                                        <img class="img-responsive img-circle img-sm" src="~/Design Content/img/Friends/woman-4.jpg" alt="Alt Text">
-                                        <div class="img-push">
-                                            <input type="text" class="form-control input-sm" placeholder="Press enter to post comment">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div><!-- end post-->
-                    </div>
-                </div><!-- end left -->
-                <!-- right -->
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="box box-widget">
-                                <div class="box-header with-border">
-                                    <div class="user-block">
-                                        <img class="img-circle" src="~/Design Content/img/Friends/guy-9.jpg" alt="User Image">
-                                        <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                                        <span class="description">Shared publicly - 7:30 PM Today</span>
-                                    </div>
-                                    <div class="box-tools">
-                                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Mark as read">
-                                            <i class="fa fa-circle-o"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="box-body" style="display: block;">
-                                    <img class="img-responsive pad" src="~/Design Content/img/Photos/5.jpg" alt="Photo">
-                                    <p>I took this photo this morning. What do you guys think?</p>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
-                                    <span class="pull-right text-muted">127 likes - 3 comments</span>
-                                </div>
-                                <div class="box-footer box-comments" style="display: block;">
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-6.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Maria Gonzales
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            It is a long established fact that a reader will be distracted
-
-                                            by the readable content of a page when looking at its layout.
-
-                                        </div>
-                                    </div>
-
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-9.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Luna Stark
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            It is a long established fact that a reader will be distracted
-
-                                            by the readable content of a page when looking at its layout.
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-footer" style="display: block;">
-                                    <form action="#" method="post">
-                                        <img class="img-responsive img-circle img-sm" src="~/Design Content/img/Friends/woman-4.jpg" alt="Alt Text">
-                                        <div class="img-push">
-                                            <input type="text" class="form-control input-sm" placeholder="Press enter to post comment">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="box box-widget">
-                                <div class="box-header with-border">
-                                    <div class="user-block">
-                                        <img class="img-circle" src="~/Design Content/img/Friends/guy-9.jpg" alt="User Image">
-                                        <span class="username"><a href="#">Jonathan Burke Jr.</a></span>
-                                        <span class="description">Shared publicly - 7:30 PM Today</span>
-                                    </div>
-                                    <div class="box-tools">
-                                        <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="" data-original-title="Mark as read">
-                                            <i class="fa fa-circle-o"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-
-                                <div class="box-body" style="display: block;">
-                                    <img class="img-responsive pad" src="~/Design Content/img/Photos/9.jpg" alt="Photo">
-                                    <p>I took this photo this morning. What do you guys think?</p>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-share"></i> Share</button>
-                                    <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
-                                    <span class="pull-right text-muted">127 likes - 3 comments</span>
-                                </div>
-                                <div class="box-footer box-comments" style="display: block;">
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-5.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Maria Gonzales
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            It is a long established fact that a reader will be distracted
-
-                                            by the readable content of a page when looking at its layout.
-
-                                        </div>
-                                    </div>
-
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="~/Design Content/img/Friends/woman-6.jpg" alt="User Image">
-                                        <div class="comment-text">
-                                            <span class="username">
-                                                Luna Stark
-
-                                                <span class="text-muted pull-right">8:03 PM Today</span>
-                                            </span>
-                                            It is a long established fact that a reader will be distracted
-
-                                            by the readable content of a page when looking at its layout.
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-footer" style="display: block;">
-                                    <form action="#" method="post">
-                                        <img class="img-responsive img-circle img-sm" src="~/Design Content/img/Friends/woman-4.jpg" alt="Alt Text">
-                                        <div class="img-push">
-                                            <input type="text" class="form-control input-sm" placeholder="Press enter to post comment">
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- end right -->
-            </div>
+<div class="container" style="margin-top: 0px;">
+<div class="col-md-12 no-paddin-xs">
+<div class="row">
+<!-- left content-->
+<div class="col-md-4">
+    <div class="profile-nav">
+        <div class="panel">
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="profile.html"> <i class="fa fa-user"></i> Profile</a></li>
+                <li><a href="about.html"> <i class="fa fa-info-circle"></i> About</a></li>
+                <li><a href="friends.html"> <i class="fa fa-users"></i> Friends</a></li>
+                <li><a href="photos.html"> <i class="fa fa-file-image-o"></i> Photos</a></li>
+                <li><a href="edit_profile.html"> <i class="fa fa-edit"></i> Edit profile</a></li>
+            </ul>
         </div>
     </div>
+    <!-- friends -->
+    <div class="panel panel-white panel-friends">
+        <div class="panel-heading">
+            <h3 class="panel-title">Friends</h3>
+        </div>
+        <div class="panel-body text-center">
+            <ul class="friends">
+                <li>
+                    <a href="#">
+
+                        <img src="~/Design Content/img/Friends/woman-4.jpg" title="Jhoanath matew" class="img-responsive tip">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Friends/woman-3.jpg" title="Martha creawn" class="img-responsive tip">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Friends/guy-2.jpg" title="Jeferh smith" class="img-responsive tip">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Friends/woman-9.jpg" title="Linda palma" class="img-responsive tip">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Friends/guy-9.jpg" title="Lindo polmo" class="img-responsive tip">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Friends/guy-5.jpg" title="andrew cartson" class="img-responsive tip">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end friends -->
+    <!-- photos -->
+    <div class="panel panel-white">
+        <div class="panel-heading">
+            <h3 class="panel-title">Photos</h3>
+        </div>
+        <div class="panel-body text-center">
+            <ul class="photos">
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Photos/5.jpg" alt="photo 1" class="img-responsive show-in-modal">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Photos/2.jpg" alt="photo 2" class="img-responsive show-in-modal">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Photos/3.jpg" alt="photo 3" class="img-responsive show-in-modal">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Photos/7.jpg" alt="photo 4" class="img-responsive show-in-modal">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Photos/5.jpg" alt="photo 5" class="img-responsive show-in-modal">
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="~/Design Content/img/Photos/4.jpg" alt="photo 6" class="img-responsive show-in-modal">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end photos-->
+    <!-- groups -->
+    <div class="panel panel-white panel-groups">
+        <div class="panel-heading">
+            <h3 class="panel-title">Groups</h3>
+        </div>
+        <div class="panel-body">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="col-xs-3 col-sm-6 col-md-3">
+                        <img src="~/Design Content/img/Likes/likes-5.png" alt="Group" class="img-responsive img-circle"/>
+                    </div>
+                    <div class="col-xs-9 col-sm-6">
+                        <span class="name">Bootdey competitors</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="list-group-item">
+                    <div class="col-xs-3 col-sm-6 col-md-3">
+                        <img src="~/Design Content/img/Likes/likes-1.png" alt="Group" class="img-responsive img-circle"/>
+                    </div>
+                    <div class="col-xs-9 col-sm-6">
+                        <span class="name">Git in action</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="list-group-item">
+                    <div class="col-xs-3 col-sm-6 col-md-3">
+                        <img src="~/Design Content/img/Likes/likes-6.png" alt="Group" class="img-responsive img-circle"/>
+                    </div>
+                    <div class="col-xs-9 col-sm-6">
+                        <span class="name">Bootdey Snippets</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+                <li class="list-group-item">
+                    <div class="col-xs-3 col-sm-6 col-md-3">
+                        <img src="~/Design Content/img/Likes/likes-2.png" alt="Group" class="img-responsive img-circle"/>
+                    </div>
+                    <div class="col-xs-9 col-sm-6">
+                        <span class="name">Html 5 live</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </li>
+            </ul>
+        </div>
+    </div><!-- end groups-->
+</div><!-- end left content-->
+<!-- right content-->
+<div class="profile-info col-md-8 animated fadeInRight">
+<div class="panel">
+@using (Html.BeginForm("PostStatus", "Profiles", FormMethod.Post))
+{
+    <textarea placeholder="Whats in your mind today?" rows="2" class="form-control input-lg p-text-area" id="StatusDetail" name="StatusDetail"> </textarea>
+    <div class="panel-footer">
+      @Html.HiddenFor(model => model.UserId)
+        <button class="btn btn-info pull-right">Post</button>
+        <ul class="nav nav-pills">
+            <li>
+                <a href="#"><i class="fa fa-map-marker"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-camera"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class=" fa fa-film"></i></a>
+            </li>
+            <li>
+                <a href="#"><i class="fa fa-microphone"></i></a>
+            </li>
+        </ul>
+    </div>
+    
+    }
+    <form>
+        
+    </form>
+    
+</div>
+<!-- first post-->
+<div class="panel panel-white post panel-shadow">
+    <div class="post-heading">
+        <div class="pull-left image">
+            <img src="~/Design Content/img/Friends/woman-1.jpg" class="avatar" alt="user profile image">
+        </div>
+        <div class="pull-left meta">
+            <div class="title h5">
+                <a href="#" class="post-user-name">Hillary McBrewk</a>
+                uploaded a photo.
+
+            </div>
+            <h6 class="text-muted time">5 seconds ago</h6>
+        </div>
+    </div>
+    <div class="post-image">
+        <img src="~/Design Content/img/Post/manok.png" class="image show-in-modal" alt="image post">
+    </div>
+    <div class="post-description">
+        <p>This is a short description</p>
+        <div class="stats">
+            <a href="#" class="stat-item">
+                <i class="fa fa-thumbs-up icon"></i>228
+
+            </a>
+            <a href="#" class="stat-item">
+                <i class="fa fa-retweet icon"></i>128
+
+            </a>
+            <a href="#" class="stat-item">
+                <i class="fa fa-comments-o icon"></i>3
+
+            </a>
+        </div>
+    </div>
+    <div class="post-footer">
+        <input class="form-control add-comment-input" placeholder="Add a comment..." type="text">
+        <ul class="comments-list">
+            <li class="comment">
+                <a class="pull-left" href="#">
+                    <img class="avatar" src="~/Design Content/img/Friends/guy-3.jpg" alt="avatar">
+                </a>
+                <div class="comment-body">
+                    <div class="comment-heading">
+                        <h4 class="comment-user-name"><a href="#">Antony andrew lobghi</a></h4>
+                        <h5 class="time">7 minutes ago</h5>
+                    </div>
+                    <p>This is a comment bla bla bla</p>
+                </div>
+            </li>
+            <li class="comment">
+                <a class="pull-left" href="#">
+                    <img class="avatar" src="~/Design Content/img/Friends/guy-2.jpg" alt="avatar">
+                </a>
+                <div class="comment-body">
+                    <div class="comment-heading">
+                        <h4 class="comment-user-name"><a href="#">Jeferh Smith</a></h4>
+                        <h5 class="time">3 minutes ago</h5>
+                    </div>
+                    <p>This is another comment bla bla bla</p>
+                </div>
+            </li>
+            <li class="comment">
+                <a class="pull-left" href="#">
+                    <img class="avatar" src="~/Design Content/img/Friends/woman-2.jpg" alt="avatar">
+                </a>
+                <div class="comment-body">
+                    <div class="comment-heading">
+                        <h4 class="comment-user-name"><a href="#">Maria fernanda coronel</a></h4>
+                        <h5 class="time">10 seconds ago</h5>
+                    </div>
+                    <p>Wow! so cool my friend</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div><!-- first post-->
+<!-- second post -->
+<div class="panel panel-white post panel-shadow">
+    <div class="post-heading">
+        <div class="pull-left image">
+            <img src="~/Design Content/img/Friends/woman-1.jpg" class="avatar" alt="user profile image">
+        </div>
+        <div class="pull-left meta">
+            <div class="title h5">
+                <a href="#" class="post-user-name">Hillary McBrewk</a>
+                made a post.
+
+            </div>
+            <h6 class="text-muted time">1 minute ago</h6>
+        </div>
+    </div>
+    <div class="post-description">
+        <p>
+            Bootdey is a gallery of free snippets resources templates and utilities
+
+            for bootstrap css hmtl js framework. Codes for developers and web designers
+        </p>
+        <div class="stats">
+            <a href="#" class="stat-item">
+                <i class="fa fa-thumbs-up icon"></i>2
+
+            </a>
+            <a href="#" class="stat-item">
+                <i class="fa fa-retweet icon"></i>12
+
+            </a>
+            <a href="#" class="stat-item">
+                <i class="fa fa-comments-o icon"></i>3
+
+            </a>
+        </div>
+    </div>
+    <div class="post-footer">
+        <input class="form-control add-comment-input" placeholder="Add a comment..." type="text">
+        <ul class="comments-list">
+            <li class="comment">
+                <a class="pull-left" href="#">
+                    <img class="avatar" src="~/Design Content/img/Friends/guy-8.jpg" alt="avatar">
+                </a>
+                <div class="comment-body">
+                    <div class="comment-heading">
+                        <h4 class="comment-user-name"><a href="#">Gavhin dahg martb</a></h4>
+                        <h5 class="time">5 minutes ago</h5>
+                    </div>
+                    <p>This is a first comment</p>
+                </div>
+                <ul class="comments-list">
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="~/Design Content/img/Friends/woman-5.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="comment-user-name"><a href="#">Ryanah Haywofd</a></h4>
+                                <h5 class="time">3 minutes ago</h5>
+                            </div>
+                            <p>Relax my friend</p>
+                        </div>
+                    </li>
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="~/Design Content/img/Friends/woman-7.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="comment-user-name"><a href="#">Maria dh heart</a></h4>
+                                <h5 class="time">3 minutes ago</h5>
+                            </div>
+                            <p>Ok, cool.</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div><!-- end second post -->
+<!-- third post -->
+<div class="panel panel-white post panel-shadow">
+    <div class="post-heading">
+        <div class="pull-left image">
+            <img src="~/Design Content/img/Friends/woman-1.jpg" class="avatar" alt="user profile image">
+        </div>
+        <div class="pull-left meta">
+            <div class="title h5">
+                <a href="#" class="post-user-name">Hillary McBrewk</a>
+                made a post.
+
+            </div>
+            <h6 class="text-muted time">1 minute ago</h6>
+        </div>
+    </div>
+    <div class="post-image">
+        <img src="~/Design Content/img/Post/place1-full.jpg" class="image show-in-modal" alt="image post">
+    </div>
+    <div class="post-description">
+        <p>This is my new awesome photo, ok relax with my style, so cray</p>
+        <div class="stats">
+            <a href="#" class="stat-item">
+                <i class="fa fa-thumbs-up icon"></i>2
+
+            </a>
+            <a href="#" class="stat-item">
+                <i class="fa fa-retweet icon"></i>12
+
+            </a>
+            <a href="#" class="stat-item">
+                <i class="fa fa-comments-o icon"></i>3
+
+            </a>
+        </div>
+    </div>
+    <div class="post-footer">
+        <input class="form-control add-comment-input" placeholder="Add a comment..." type="text">
+        <ul class="comments-list">
+            <li class="comment">
+                <a class="pull-left" href="#">
+                    <img class="avatar" src="~/Design Content/img/Friends/guy-8.jpg" alt="avatar">
+                </a>
+                <div class="comment-body">
+                    <div class="comment-heading">
+                        <h4 class="comment-user-name"><a href="#">Gavhin dahg martb</a></h4>
+                        <h5 class="time">5 minutes ago</h5>
+                    </div>
+                    <p>This is a first comment</p>
+                </div>
+                <ul class="comments-list">
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="~/Design Content/img/Friends/woman-5.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="comment-user-name"><a href="#">Ryanah Haywofd</a></h4>
+                                <h5 class="time">3 minutes ago</h5>
+                            </div>
+                            <p>Relax my friend</p>
+                        </div>
+                    </li>
+                    <li class="comment">
+                        <a class="pull-left" href="#">
+                            <img class="avatar" src="~/Design Content/img/Friends/woman-7.jpg" alt="avatar">
+                        </a>
+                        <div class="comment-body">
+                            <div class="comment-heading">
+                                <h4 class="comment-user-name"><a href="#">Maria dh heart</a></h4>
+                                <h5 class="time">3 minutes ago</h5>
+                            </div>
+                            <p>Ok, cool.</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div><!-- end third post -->
+<div class="panel panel-white post-load-more panel-shadow text-center">
+    <button class="btn btn-info">
+        <i class="fa fa-refresh"></i>Load More...
+
+    </button>
+</div>
+</div><!--end right content-->
+</div>
+</div>
 </div><!-- end timeline content-->
 <!-- Online users sidebar content-->
 <div class="chat-sidebar focus">
     <div class="list-group text-left">
-        <p class="text-center visible-xs"><a href="#" class="hide-chat btn btn-success">Hide</a></p>
+        <p class="text-center visible-xs">
+            <a href="#" class="hide-chat">Hide</a>
+        </p>
         <p class="text-center chat-title">Online users</p>
         <a href="messages.html" class="list-group-item">
             <i class="fa fa-check-circle connected-status"></i>
@@ -435,3 +524,7 @@
         </a>
     </div>
 </div><!-- Online users sidebar content-->
+<!-- Online users sidebar content-->
+</div>
+</div>
+
