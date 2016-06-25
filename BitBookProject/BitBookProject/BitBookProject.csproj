@@ -231,6 +231,7 @@
     <Content Include="Views\Profiles\Registration.cshtml" />
     <Content Include="Views\Account\LoggedIn.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Profiles\EditProfile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

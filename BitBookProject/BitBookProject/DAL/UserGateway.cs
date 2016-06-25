@@ -75,6 +75,56 @@ namespace BitBookProject.DAL
 
         }
 
-        
+        public User GetuserByUserName(string UserName)
+        {
+            SqlConnection connection = new SqlConnection(Conntection);
+            string quary = "Select * from UserTable Where UserName='" + UserName + "'";
+            SqlCommand command = new SqlCommand(quary, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            User userModel = new User();
+            while (reader.Read())
+            {
+                User model = new User();
+                model.Id = (int)reader["Id"];
+                model.Name = reader["Name"].ToString();
+                model.Email = reader["Email"].ToString();
+                model.Password = reader["Password"].ToString();
+                model.UserName = reader["UserName"].ToString();
+
+                model.ProfilePicture = reader["ProfilePicture"].ToString();
+                model.CoverPicture = reader["CoverPicture"].ToString();
+                model.DOB = Convert.ToDateTime(reader["DOB"]);
+                model.Gender = (int)reader["Gender"];
+                userModel = model;
+            }
+            connection.Close();
+            reader.Close();
+            return userModel;
+
+        }
+
+
+
+        public bool GetUserById(User user)
+        {
+            SqlConnection connection=new SqlConnection(Conntection);
+
+
+            string query = "UPDATE UserTable SET Name='" + user.Name + "', Email='" + user.Email + "', Password='" + user.Password + "', UserName='" + user.UserName + "', ProfilePicture='" + user.ProfilePicture + "', CoverPicture='" + user.CoverPicture + "', DOB='" + user.DOB + "', Gender='" + user.Gender + "' WHERE ID=" + user.Id;
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+            int rowAffected = command.ExecuteNonQuery();
+            connection.Close();
+
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            return false;
+            
+        }
     }
 }

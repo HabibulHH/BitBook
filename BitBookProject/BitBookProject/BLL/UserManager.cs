@@ -39,5 +39,34 @@ namespace BitBookProject.BLL
             return isLogin;
 
         }
+
+        public User GetUserByUsername(string userName)
+        {
+            return userGateway.GetuserByUserName(userName);
+        }
+
+     
+        public string UpdateUser(User user)
+        {
+            
+
+            if (userGateway.IsEmailExist(user))
+            {
+                return "Email Address Already Exist.";
+            }
+            else
+            {
+               
+                if (userGateway.GetUserById(user))
+                {
+                    return "Update successful.";
+                }
+                else
+                {
+                    return "Update failed.";
+                }
+            }
+        
+        }
     }
 }
