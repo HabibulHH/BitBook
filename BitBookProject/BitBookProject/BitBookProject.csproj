@@ -126,15 +126,26 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Design Content\assets\css\AjaxLoader.html" />
+    <Content Include="Design Content\assets\css\animate.css" />
     <Content Include="Design Content\assets\css\animate.min.css" />
+    <Content Include="Design Content\assets\css\bootstrap-tokenfield.min.css" />
+    <Content Include="Design Content\assets\css\bootstrap.min.css" />
     <Content Include="Design Content\assets\css\Custom.css" />
     <Content Include="Design Content\assets\css\errors.css" />
     <Content Include="Design Content\assets\css\friends.css" />
+    <Content Include="Design Content\assets\css\grabbing.html" />
     <Content Include="Design Content\assets\css\grid_posts.css" />
+    <Content Include="Design Content\assets\css\ladda.min.css" />
+    <Content Include="Design Content\assets\css\lightcase.css" />
     <Content Include="Design Content\assets\css\list_users.css" />
+    <Content Include="Design Content\assets\css\media.css" />
+    <Content Include="Design Content\assets\css\owl.carousel.css" />
+    <Content Include="Design Content\assets\css\owl.theme.css" />
     <Content Include="Design Content\assets\css\people_directory.css" />
     <Content Include="Design Content\assets\css\photos.css" />
     <Content Include="Design Content\assets\css\recover_password.css" />
+    <Content Include="Design Content\assets\css\style.css" />
     <Content Include="Design Content\assets\css\timeline.css" />
     <Content Include="Design Content\assets\js\custom.js" />
     <Content Include="Design Content\assets\js\grid_posts.js" />
@@ -200,8 +211,16 @@
     <Content Include="Design Content\font-awesome-4.4.0\fonts\fontawesome-webfont93e3.woff" />
     <Content Include="Design Content\font-awesome-4.4.0\fonts\fontawesome-webfontd41d.eot" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DropJone.Js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-1.8.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.js" />
+    <Content Include="Scripts\jquery.fileupload-ui.js" />
+    <Content Include="Scripts\jquery.fileupload.js" />
+    <Content Include="Scripts\jquery.iframe-transport.js" />
+    <Content Include="Scripts\jquery.uploadPreview.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -235,6 +254,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\img\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

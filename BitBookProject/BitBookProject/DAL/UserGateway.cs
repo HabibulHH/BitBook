@@ -126,5 +126,39 @@ namespace BitBookProject.DAL
             return false;
             
         }
+
+        public User UploadImageFile(User user)
+        {
+            SqlConnection connection = new SqlConnection(Conntection);
+
+
+            string query = "UPDATE UserTable SET Name='" + user.Name + "', Email='" + user.Email + "', Password='" + user.Password + "', UserName='" + user.UserName + "', ProfilePicture='" + user.ProfilePicture + "', CoverPicture='" + user.CoverPicture + "', DOB='" + user.DOB + "', Gender='" + user.Gender + "' WHERE ID=" + user.Id;
+
+            SqlCommand command = new SqlCommand(query, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            User userModel = new User();
+            while (reader.Read())
+            {
+                User model = new User();
+                model.Id = (int)reader["Id"];
+                model.Name = reader["Name"].ToString();
+                model.Email = reader["Email"].ToString();
+                model.Password = reader["Password"].ToString();
+                model.UserName = reader["UserName"].ToString();
+
+                model.ProfilePicture = reader["ProfilePicture"].ToString();
+                model.CoverPicture = reader["CoverPicture"].ToString();
+                model.DOB = Convert.ToDateTime(reader["DOB"]);
+                model.Gender = (int)reader["Gender"];
+                userModel = model;
+            }
+            connection.Close();
+            reader.Close();
+            return userModel;
+        }
+
+       
+      
     }
 }

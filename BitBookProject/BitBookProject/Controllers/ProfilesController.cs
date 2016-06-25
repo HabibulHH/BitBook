@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,11 +14,11 @@ namespace BitBookProject.Controllers
         // GET: Profiles
         UserManager userManager = new UserManager();
 
-        public ActionResult Profiles(string userName)
+        public ActionResult Profiles(User user)
         {
-          var userData=  userManager.GetUserByUsername(userName);
+            var userData = userManager.GetUserByUsername(user.UserName);
 
-            
+
             return View(userData);
         }
 
@@ -35,11 +36,29 @@ namespace BitBookProject.Controllers
             return View();
         }
 
-        public ActionResult EditProfile()
+
+        [HttpPost]
+        public ActionResult EditProfile(User model, HttpPostedFileBase file)
         {
+
+
+
+            if (file != null && file.ContentLength > 0)
+            {
+
+
+                // extract only the fielname
+                var fileName = Path.GetFileName(file.FileName);
+                // store the file inside ~/App_Data/uploads folder
+                var path = Path.Combine(Server.MapPath("~/Content/img"), fileName);
+                model.ProfilePicture = path;
+                User aUser = userManager.UploadImage(model);
+
+                file.SaveAs(path);
+                return RedirectToAction("Profiles", "Profiles", aUser);
+            }
             return View();
         }
-      
 
 
     }

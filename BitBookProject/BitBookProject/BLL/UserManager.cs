@@ -68,5 +68,11 @@ namespace BitBookProject.BLL
             }
         
         }
+
+        public User UploadImage(User user)
+        {
+            return userGateway.UploadImageFile(user);
+
+        }
     }
 }

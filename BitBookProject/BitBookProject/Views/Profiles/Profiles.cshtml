@@ -4,6 +4,7 @@
    
     //ViewBag.Title = "Profiles";
     Layout = "~/Views/Shared/ProfilesLayout.cshtml";
+  
 }
 
 
@@ -21,12 +22,18 @@
             </h2>
         </div>
     </div>
-    <div class="panel-body">
-        <div class="profile-thumb">
-            <img src="~/Design Content/img/Friends/woman-1.jpg" alt="">
-        </div>
-        <a href="#" class="fb-user-mail">@Model.Email</a>
-    </div>
+   @using (Html.BeginForm("EditProfile", "Profiles", FormMethod.Post,
+       new {enctype = "multipart/form-data"}))
+   {
+       <div class="panel-body">
+           <div class="profile-thumb">
+               <img src="~/Design Content/img/Friends/woman-1.jpg" alt="">
+
+               <input type="file" name="file" class="photo" id="imgInput">
+               <input type="submit" value="Upload image" id="Image" class="submit"/>
+           </div>
+       </div>
+   }
 </div>
 
 
@@ -516,4 +523,5 @@
 <!-- Online users sidebar content-->
 </div>
 </div>
+
 

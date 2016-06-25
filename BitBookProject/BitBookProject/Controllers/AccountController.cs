@@ -25,7 +25,7 @@ namespace BitBookProject.Controllers
             {
               
                 ViewBag.SuccessMessage = "LogIn Successfully";
-                return RedirectToAction("Profiles", "Profiles",new {user.UserName});
+                return RedirectToAction("Profiles", "Profiles",user);
             }
             else
             {

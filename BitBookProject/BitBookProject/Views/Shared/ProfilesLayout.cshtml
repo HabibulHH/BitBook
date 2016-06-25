@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model BitBookProject.Models.User
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -10,7 +11,31 @@
     <meta name="author" content="">
     <link rel="icon" href="img/favicon.png">
     <title>SonFlat</title>
-    <!-- Bootstrap core CSS -->    
+
+    <!-- Bootstrap core CSS -->
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=no; target-densityDpi=device-dpi;" />
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,300,300italic,400italic&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Frame : FreeLance | Profile</title>
+
+   
+    
+    <link rel='stylesheet' id='fmr_bootstrap-tokenfield-css' href='~/Design Content/assets/css/bootstrap-tokenfield.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='fmr_lada_css-css' href='~/Design Content/assets/css/ladda.min.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='fmr_owl_css-css' href='~/Design Content/assets/css/owl.carousel.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='fmr_owl_theme-css' href='~/Design Content/assets/css/owl.theme.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="~/Design Content/assets/css/lightcase.css">
+    <link rel='stylesheet' id='fmr_fonts_icon-css' href='~/Design Content/assets/css/style.css' type='text/css' media='all' />
+
+    <link rel='stylesheet' id='fmr_is_admin-css' href='~/Design Content/assets/css/media.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='fmr_animate-css' href='~/Design Content/assets/css/animate.css' type='text/css' media='all' />
+
+
+
+    <!--another-->
+    <script src="~/Scripts/DropJone.Js"></script>
     <link href="~/Design Content/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Design Content/assets/css/animate.min.css" rel="stylesheet">
     <link href="~/Design Content/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -18,8 +43,9 @@
     <script src="~/Design Content/assets/js/jquery.1.11.1.min.js"></script>
     <script src="~/Design Content/bootstrap-3.3.5/js/bootstrap.min.js"></script>
     <script src="~/Design Content/assets/js/custom.js"></script>
-
-    <link href="~/Design Content/assets/css/Custom.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.uploadPreview.min.js"></script>
+    <link href="~/Design Content/assets/css/Custom.css" rel="stylesheet"/>
+    <script src="~/Scripts/jquery.uploadPreview.min.js"></script>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   
 
@@ -64,7 +90,7 @@
                 <ul class="nav navbar-nav navbar-right">
                   <li>
                         <a href="profile.html">
-                            Jonathan
+                            @*@Model.Name*@
 
                             <img src="~/Design Content/img/Friends/guy-9.jpg" class="img-nav">
                         </a>
@@ -131,5 +157,6 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>
