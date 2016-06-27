@@ -32,5 +32,13 @@ namespace BitBookProject.DAL
             return numberOfRow;
 
         }
+
+        private List<Status> GetAllStatus(User user)
+        {
+            List<Status> statusList= new List<Status>();
+
+            Query = "Select *form Status Where UserId=" + user.UserId;
+            
+        }
     }
 }
