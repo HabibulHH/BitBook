@@ -13,6 +13,7 @@ namespace BitBookProject.Controllers
         UserManager userManager = new UserManager();
         // GET: Account
         public ActionResult Login()
+       
         {
             return View();
         }
@@ -47,6 +48,12 @@ namespace BitBookProject.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Account");
         }
 }
 }

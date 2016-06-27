@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using BitBookProject.Models;
@@ -31,6 +32,26 @@ namespace BitBookProject.DAL
             int numberOfRow = Command.ExecuteNonQuery();
             return numberOfRow;
 
+        }
+
+        public bool DeleteStatus(Status status)
+
+        {
+            bool IsDelete = false;
+            Query = "Delete StatusDetail from Status where Id='" + status.Id + "'";
+            SqlCommand command = new SqlCommand();
+            command.CommandText = Query;
+           
+
+            Connection.Open();
+            int rowAffected = command.ExecuteNonQuery();
+            Connection.Close();
+
+            if (rowAffected > 0)
+            {
+                return IsDelete = true;
+            }
+            return IsDelete;
         }
     }
 }

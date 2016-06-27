@@ -14,5 +14,10 @@ namespace BitBookProject.BLL
         {
             return statusGateway.saveStatus(status) > 0;
         }
+
+        public bool DeletePost(Status status)
+        {
+            return statusGateway.DeleteStatus(status);
+        }
     }
 }

@@ -12,10 +12,13 @@ namespace BitBookProject.DAL
     {
         private string Conntection =
             WebConfigurationManager.ConnectionStrings["BitBookDbConnectionString"].ConnectionString;
+
         public int SaveUser(User user)
         {
             SqlConnection connection = new SqlConnection(Conntection);
-            string quary = "Insert Into UserTable VALUES('" + user.Name + "','" + user.Email + "','" + user.Password + "','" + user.UserName + "','" + user.ProfilePicture + "','" + user.CoverPicture + "','" + user.DOB + "','" + user.Gender + "')";
+            string quary = "Insert Into UserTable VALUES('" + user.Name + "','" + user.Email + "','" + user.Password +
+                           "','" + user.UserName + "','" + user.ProfilePicture + "','" + user.CoverPicture + "','" +
+                           user.DOB + "','" + user.Gender + "')";
             SqlCommand command = new SqlCommand(quary, connection);
             connection.Open();
             int rowAffctedColumn = command.ExecuteNonQuery();
@@ -86,7 +89,7 @@ namespace BitBookProject.DAL
             while (reader.Read())
             {
                 User model = new User();
-                model.UserId = (int)reader["Id"];
+                model.UserId = (int) reader["Id"];
                 model.Name = reader["Name"].ToString();
                 model.Email = reader["Email"].ToString();
                 model.Password = reader["Password"].ToString();
@@ -94,7 +97,7 @@ namespace BitBookProject.DAL
                 model.ProfilePicture = reader["ProfilePicture"].ToString();
                 model.CoverPicture = reader["CoverPicture"].ToString();
                 model.DOB = Convert.ToDateTime(reader["DOB"]);
-                model.Gender = (int)reader["Gender"];
+                model.Gender = (int) reader["Gender"];
                 userModel = model;
             }
             connection.Close();
@@ -102,12 +105,16 @@ namespace BitBookProject.DAL
             return userModel;
 
         }
+
         public bool GetUserById(User user)
         {
             SqlConnection connection = new SqlConnection(Conntection);
 
 
-            string query = "UPDATE UserTable SET Name='" + user.Name + "', Email='" + user.Email + "', Password='" + user.Password + "', UserName='" + user.UserName + "', ProfilePicture='" + user.ProfilePicture + "', CoverPicture='" + user.CoverPicture + "', DOB='" + user.DOB + "', Gender='" + user.Gender + "' WHERE ID=" + user.UserId;
+            string query = "UPDATE UserTable SET Name='" + user.Name + "', Email='" + user.Email + "', Password='" +
+                           user.Password + "', UserName='" + user.UserName + "', ProfilePicture='" + user.ProfilePicture +
+                           "', CoverPicture='" + user.CoverPicture + "', DOB='" + user.DOB + "', Gender='" + user.Gender +
+                           "' WHERE ID=" + user.UserId;
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -123,10 +130,10 @@ namespace BitBookProject.DAL
 
         }
 
-        public User GetuserByUserId(int  Id)
+        public User GetuserByUserId(int Id)
         {
             SqlConnection connection = new SqlConnection(Conntection);
-            string quary = "Select * from UserTable Where Id="+Id;
+            string quary = "Select * from UserTable Where Id=" + Id;
             SqlCommand command = new SqlCommand(quary, connection);
             connection.Open();
             SqlDataReader reader = command.ExecuteReader();
@@ -134,7 +141,7 @@ namespace BitBookProject.DAL
             while (reader.Read())
             {
                 User model = new User();
-                model.UserId = (int)reader["Id"];
+                model.UserId = (int) reader["Id"];
                 model.Name = reader["Name"].ToString();
                 model.Email = reader["Email"].ToString();
                 model.Password = reader["Password"].ToString();
@@ -142,13 +149,36 @@ namespace BitBookProject.DAL
                 model.ProfilePicture = reader["ProfilePicture"].ToString();
                 model.CoverPicture = reader["CoverPicture"].ToString();
                 model.DOB = Convert.ToDateTime(reader["DOB"]);
-                model.Gender = (int)reader["Gender"];
+                model.Gender = (int) reader["Gender"];
                 userModel = model;
             }
             connection.Close();
             reader.Close();
             return userModel;
 
+        }
+
+        public bool UploadProfilePicture(User user)
+        {
+            SqlConnection connection = new SqlConnection(Conntection);
+
+
+            string query = "UPDATE UserTable SET Name='" + user.Name + "', Email='" + user.Email + "', Password='" +
+                           user.Password + "', UserName='" + user.UserName + "', ProfilePicture='" + user.ProfilePicture +
+                           "', CoverPicture='" + user.CoverPicture + "', DOB='" + user.DOB + "', Gender='" + user.Gender +
+                           "' WHERE ID=" + user.UserId;
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            connection.Open();
+            int rowAffected = command.ExecuteNonQuery();
+            connection.Close();
+
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
