@@ -50,33 +50,39 @@
                         @Html.ValidationSummary(true, "", new {@class = "text-danger"})
                       
                    
-                    <form role="form" class="frm hidden">
+                    <form role="form" id="Myform" class="frm hidden">
                         <div class="form-content">
                             <div class="form-group">
-                                
 
 
-                                    @Html.EditorFor(model => model.Email, new {htmlAttributes = new {@class = "form-control input-underline input-lg"}})
-                                    @Html.ValidationMessageFor(model => model.Email, "", new {@class = "text-danger"})
 
-                               
+                                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control input-underline input-lg", PlaceHolder = "Email" } })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+
                             </div>
                             <div class="form-group">
 
-                                @Html.EditorFor(model => model.Password, new {htmlAttributes = new {@class = "form-control input-underline input-lg"}})
-                                @Html.ValidationMessageFor(model => model.Password, "", new {@class = "text-danger"})
+                                @*@Html.EditorFor(model => model.Password, new {htmlAttributes = new {@class = "form-control input-underline input-lg",PlaceHolder="Password"}})
+            @Html.ValidationMessageFor(model => model.Password, "", new {@class = "text-danger"})*@
+                                <input type="password" class="form-control input-underline input-lg" placeholder="Password" id="txtPassword" />
+
 
                             </div>
                             <div class="form-group">
-                                @Html.EditorFor(model => model.UserName, new {htmlAttributes = new {@class = "form-control input-underline input-lg"}})
-                                @Html.ValidationMessageFor(model => model.UserName, "", new {@class = "text-danger"})
+
+                                <input type="password" class="form-control input-underline input-lg"  placeholder="Confirm Password" id="txtConfirmPassword" />
+                            </div>
+                            <div class="form-group">
+                                @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control input-underline input-lg", PlaceHolder = "User Name" } })
+                                @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                             </div>
                         </div>
 
 
 
-                       
-                        <button type="submit" class="btn btn-warning btn-lg">Register</button>
+
+                        <button type="submit" class="btn btn-warning btn-lg" id="btnSubmit">Register</button>
                     </form>
                 </div>
             </div>
@@ -166,7 +172,9 @@
         </div>
     </div>
 }
+   
 </body>
+
 
 <!-- Mirrored from demos.bootdey.com/SonFlat/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 14 Jun 2016 14:42:19 GMT -->
 </html>

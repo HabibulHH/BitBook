@@ -25,7 +25,7 @@ namespace BitBookProject.Controllers
             {
                 User aUser = userManager.GetUserByUsername(user.UserName);
                 ViewBag.SuccessMessage = "LogIn Successfully";
-                return RedirectToAction("Profiles", "Profiles",aUser);
+                return RedirectToAction("Profiles", "Profiles", aUser);
             }
             else
             {
@@ -47,6 +47,12 @@ namespace BitBookProject.Controllers
             {
                 return RedirectToAction("Login");
             }
+        }
+
+        public ActionResult LogOut()
+        {
+            Session.Clear();
+            return RedirectToAction("Login", "Account");
         }
 }
 }
