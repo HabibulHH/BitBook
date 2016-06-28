@@ -16,10 +16,11 @@ namespace BitBookProject.Controllers
 
         public ActionResult Profiles(User user)
         {
-            
             var userData = userManager.GetUserByUsername(user.UserName);
+
             var staus = statusManager.getStatusOfUser(user);
             ViewBag.status = staus;
+            Session["User"] = userData;
             return View(userData);
         }
 
@@ -41,7 +42,11 @@ namespace BitBookProject.Controllers
 
         public ActionResult Registration(User user)
         {
-            userManager.SaveUser(user);
+            if (ModelState.IsValid)
+            {
+                userManager.SaveUser(user);
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
 
