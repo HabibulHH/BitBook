@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
+using System.Net.Mail;
 using System.Web;
 
 namespace BitBookProject.Models
@@ -34,5 +36,7 @@ namespace BitBookProject.Models
 
         public List<Status> UsersStautusList { get; set; }
         public List<FriendList> UsersFriendList { get; set; } 
+
+       
     }
 }

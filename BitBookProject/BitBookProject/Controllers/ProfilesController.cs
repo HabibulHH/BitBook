@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BitBookProject.BLL;
@@ -15,8 +16,9 @@ namespace BitBookProject.Controllers
 
         public ActionResult Profiles(User user)
         {
-            
+
             var userData = userManager.GetUserByUsername(user.UserName);
+            Session["User"] = userData;
             return View(userData);
         }
 
@@ -26,11 +28,14 @@ namespace BitBookProject.Controllers
             return View();
         }
 
+
+
         [HttpPost]
 
-        public ActionResult Registration(User user)
+        public ActionResult Registration(User model)
         {
-            userManager.SaveUser(user);
+            
+            userManager.SaveUser(model);
             return View();
         }
 
