@@ -14,5 +14,10 @@ namespace BitBookProject.BLL
         {
             return statusGateway.saveStatus(status) > 0;
         }
+
+        public List<Status> getStatusOfUser(User user)
+        {
+            return statusGateway.GetAllStatus(user);
+        }
     }
 }

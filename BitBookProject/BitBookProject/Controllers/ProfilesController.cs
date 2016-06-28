@@ -11,13 +11,24 @@ namespace BitBookProject.Controllers
     public class ProfilesController : Controller
     {
         // GET: Profiles
+        StatusManager statusManager =new StatusManager();
         UserManager userManager = new UserManager();
 
         public ActionResult Profiles(User user)
         {
             
             var userData = userManager.GetUserByUsername(user.UserName);
+            var staus = statusManager.getStatusOfUser(user);
+            ViewBag.status = staus;
             return View(userData);
+        }
+
+        public JsonResult LoadStatus(int UserId)
+        {
+            User user= new User();
+            user.UserId = UserId;
+            var staus = statusManager.getStatusOfUser(user);
+            return Json(staus, JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Registration()
