@@ -73,5 +73,26 @@ namespace BitBookProject.BLL
             }
         
         }
+
+        
+         public bool UploadProfilePicture(User user)
+         {
+            if (userGateway.UploadProfilePicture(user))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+
+
+          public User GetProfilePhoto(User user)
+          {
+              return userGateway.GetProfilePic(user);
+          }
     }
-}
+    }

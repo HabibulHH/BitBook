@@ -26,10 +26,6 @@ namespace BitBookProject.Models
         public int Gender { get; set; }
 
 
-        [NotMapped] // Does not effect with your database
-        [Compare("Password")]
-        public string ConfirmPassword { get; set; }
-
         public User(string Email, string UserName, string Password):this()
         {
             this.Email = Email;

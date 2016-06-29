@@ -1,4 +1,5 @@
-﻿@model BitBookProject.Models.User
+﻿@using System.Web.UI.WebControls
+@model BitBookProject.Models.User
 @{
     ViewBag.Title = "Login";
 }
@@ -15,7 +16,9 @@
     <link rel="icon" href="img/favicon.png">
     <title>Clean-Note</title>
     <!-- Bootstrap core CSS -->
+
     <link href="~/Design Content/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+    
 
     <link href="~/Design Content/assets/css/animate.min.css" rel="stylesheet">
     <link href="~/Design Content/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
@@ -48,18 +51,18 @@
                         <form role="form" class="frm  animated fadeInRight">
                             <div class="form-content">
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control input-underline input-lg" } })
+                                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control input-underline input-lg" ,PlaceHolder="User Name"} })
                                     @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                                 </div>
 
                                 <div class="col-md-10">
-                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control input-underline input-lg" } })
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control input-underline input-lg" ,PlaceHolder="Password"} })
                                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-info btn-lg btn-frm">Log in</button>
+                            <button type="submit" class="btn btn-info btn-lg ">Log in</button>
                           
-                            <input type="button" value="Register" class="btn btn-info btn-lg btn-frm" onclick="@("window.location.href='" + @Url.Action("Registration", "Profiles") + "'");" />
+                            <input type="button" value="Register" class="btn btn-info btn-lg" onclick="@("window.location.href='" + @Url.Action("Registration", "Profiles") + "'");" />
                             @*<button type="submit" class="btn btn-info btn-lg">Register</button>*@
                         </form>
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -56,6 +57,40 @@ namespace BitBookProject.Controllers
         }
 
         [HttpPost]
+        public ActionResult EditProfile(User model, HttpPostedFileBase file)
+        {
+
+            if (ModelState.IsValid)
+            {
+                if (file != null && file.ContentLength > 0)
+                {
+                    string path=Path.Combine(Server.MapPath("~/Design Content/img"),
+                                                              Path.GetFileName(file.FileName));
+                    string pathofdatabse = Path.Combine(("~/Design Content"),
+                        Path.GetFileName(file.FileName));
+                    User user = userManager.GetUserByUserId(model.UserId);
+
+                    user.ProfilePicture = pathofdatabse; 
+                if (userManager.UploadProfilePicture(user))
+                {
+                    file.SaveAs(path);
+                    ViewBag.UpdateMessageforProfile = "Update Successfully";
+                    user.ProfilePicture =userManager.GetProfilePhoto(user).ProfilePicture;
+                    return RedirectToAction("Profiles", "Profiles", user);
+
+                }
+                else
+                {
+                    ViewBag.ErrorMessageForProfile = "Update Failed";
+                }
+
+            }
+
+  
+            }
+            return View();
+        }
+        [HttpPost]
         public ActionResult PostStatus(Status status)
         {
             StatusManager statusManager= new StatusManager();
@@ -65,6 +100,13 @@ namespace BitBookProject.Controllers
             return RedirectToAction("Profiles", "Profiles", aUser);
         }
 
+
+        public ActionResult GetProfilePhoto( User user)
+        {
+            User aUser=new User(); 
+            aUser=userManager.GetProfilePhoto(user);
+            return RedirectToAction("Profiles", "Profiles",aUser);
+        }
 
     }
 }

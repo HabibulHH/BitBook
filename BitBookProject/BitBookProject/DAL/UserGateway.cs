@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -149,6 +150,59 @@ namespace BitBookProject.DAL
             reader.Close();
             return userModel;
 
+        }
+
+        public bool UploadProfilePicture(User user)
+        {
+            SqlConnection connection = new SqlConnection(Conntection);
+
+
+            string query = "UPDATE UserTable SET ProfilePicture=@ProfilePicture where Id=" + user.UserId;
+           
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.Clear();
+            command.Parameters.Add("ProfilePicture", SqlDbType.Char);
+            command.Parameters["ProfilePicture"].Value = user.ProfilePicture;
+            connection.Open();
+            int rowAffected = command.ExecuteNonQuery();
+            connection.Close();
+
+            if (rowAffected > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public  User GetProfilePic(User user)
+        {
+            SqlConnection connecton =new SqlConnection(Conntection);
+            string quary = "Select ProfilePicture from UserTable Where Id=" + user.UserId;
+            SqlCommand command=new SqlCommand(quary,connecton);
+
+            connecton.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            User userModel = new User();
+            while (reader.Read())
+            {
+                User model = new User();
+                model.UserId = user.UserId;
+
+                //model.Name = reader["Name"].ToString();
+                //model.Email = reader["Email"].ToString();
+                //model.Password = reader["Password"].ToString();
+                //model.UserName = reader["UserName"].ToString();
+                model.ProfilePicture = reader["ProfilePicture"].ToString();
+                //model.CoverPicture = reader["CoverPicture"].ToString();
+                //model.DOB = Convert.ToDateTime(reader["DOB"]);
+                //model.Gender = (int)reader["Gender"];
+   
+                userModel = model;
+            }
+            connecton.Close();
+            reader.Close();
+
+            return userModel;
         }
     }
 }
