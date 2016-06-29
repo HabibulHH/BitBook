@@ -24,9 +24,6 @@ H:\BitBook\BitBookProject\BitBookProject\bin\Newtonsoft.Json.xml
 H:\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.dll
 H:\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.pdb
 H:\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.csprojResolveAssemblyReference.cache
-D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.dll
-D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.pdb
-D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.csprojResolveAssemblyReference.cache
 D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\BitBookProject.dll.config
 D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\BitBookProject.dll
 D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\BitBookProject.pdb
@@ -50,3 +47,5 @@ D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\System.We
 D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\System.Web.WebPages.Razor.xml
 D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\Antlr3.Runtime.pdb
 D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\bin\Newtonsoft.Json.xml
+D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.dll
+D:\Personal\Projects\BitBook\BitBook\BitBookProject\BitBookProject\obj\Debug\BitBookProject.pdb

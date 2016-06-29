@@ -64,9 +64,9 @@ namespace BitBookProject.Controllers
             {
                 if (file != null && file.ContentLength > 0)
                 {
-                    string path=Path.Combine(Server.MapPath("~/Design Content/img"),
+                    string path=Path.Combine(Server.MapPath("~/DesignContent/img"),
                                                               Path.GetFileName(file.FileName));
-                    string pathofdatabse = Path.Combine(("~/Design Content"),
+                    string pathofdatabse = Path.Combine(("~/DesignContent/img"),
                         Path.GetFileName(file.FileName));
                     User user = userManager.GetUserByUserId(model.UserId);
 

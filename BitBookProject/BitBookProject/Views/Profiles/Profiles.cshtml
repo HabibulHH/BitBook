@@ -29,9 +29,15 @@
         <div class="panel-body">
 
             <div class="profile-thumb">
-                <img src="@Url.Content(Model.ProfilePicture)" alt="" style="width: 110px; height: 350px">
-                <input type="file" name="file" class="photo" id="imgInput">
-                <input type="submit" value="Upload image" id="Image" class="submit" />
+                <img src="@Url.Content(Model.ProfilePicture)" alt="">
+                <table>
+                    <tr>
+                        <td><input type="file" name="file" class="btn-file" id="imgInput"></td>
+                        <td><input type="submit" value="Upload image" id="Image" class="btn-default"/></td>
+                    </tr>
+                </table>
+               
+                
             </div>
 
             <a href="#" class="fb-user-mail">@Model.Email</a>
